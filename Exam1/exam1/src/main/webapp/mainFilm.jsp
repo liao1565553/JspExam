@@ -12,8 +12,6 @@
 	<h1>电影</h1>
 	<%
 	List<?> lists=(List<?>)session.getAttribute("lists");
-	
-	
 	%>
 	
 	
