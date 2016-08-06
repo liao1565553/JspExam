@@ -1,0 +1,11 @@
+#toppage {
+	font-size: 60px;
+	background: grey;
+	text-align: center;
+}
+
+#login,#logout,#tomain{
+	text-align: center;
+	backgroud: green;
+	font-size: 20px;
+}
