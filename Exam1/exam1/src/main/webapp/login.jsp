@@ -15,14 +15,6 @@
 	</div>
 	<form action="<%=request.getContextPath()%>/loginServlet" method="post">
 
-		<%
-			if (request.getAttribute("returnUri") != null) {
-		%>
-		<input type="hidden" name="returnUri" value="<%=request.getAttribute("returnUri")%>" />
-		<%
-			}
-		%>
-
 		<div class="login_putin">
 			<ul>
 				<li>
@@ -34,8 +26,6 @@
 		<div class="login_btn">
 			<input type="submit" value="登陆">
 		</div>
-
-
 	</form>
 
 </body>

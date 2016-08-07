@@ -44,8 +44,16 @@
 		<servlet-name>ShowFilmServlet</servlet-name>
 		<servlet-class>com.hand.servlet.ShowFilmServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>GetLanguageServlet</servlet-name>
+		<servlet-class>com.hand.servlet.GetLanguageServlet</servlet-class>
+	</servlet>
 
 
+	<servlet-mapping>
+		<servlet-name>GetLanguageServlet</servlet-name>
+		<url-pattern>/GetLanguageServlet</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ShowFilmServlet</servlet-name>
 		<url-pattern>/showFilmServlet</url-pattern>

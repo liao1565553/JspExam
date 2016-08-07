@@ -9,13 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 public class SqlUtil {
-	@SuppressWarnings("rawtypes")
-	public static List<Map> resultSetToList(ResultSet rs) throws java.sql.SQLException {
+	public static List<Map<?,?>> resultSetToList(ResultSet rs) throws java.sql.SQLException {
 		if (rs == null)
 			return Collections.emptyList();
 		ResultSetMetaData md = rs.getMetaData(); // 得到结果集(rs)的结构信息，比如字段数、字段名等
 		int columnCount = md.getColumnCount(); // 返回此 ResultSet 对象中的列数
-		List<Map> list = new ArrayList<Map>();
+		List<Map<?,?>> list = new ArrayList<Map<?,?>>();
 		Map<String, Object> rowData = new HashMap<String, Object>();
 		while (rs.next()) {
 			rowData = new HashMap<String, Object>(columnCount);

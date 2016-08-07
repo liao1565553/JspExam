@@ -13,3 +13,20 @@ td {
 	border-style: solid;
 	width: 200px;
 }
+
+#addFilmButton,#movie{
+	text-align: right;
+	backgroud: green;
+	font-size: 20px;
+}
+
+#title{
+	margin-top:20px;
+	width:100%;
+	backgroud: green;
+	height: 40px;
+}
+
+
+
+
