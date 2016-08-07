@@ -12,7 +12,8 @@ public class FilmDaoImpl implements FilmDao {
 	Connection conn = ConnectionFactory.getInstance().makeConnection();;
 
 	public ResultSet getAllFilm() throws SQLException {
-		PreparedStatement ps = conn.prepareStatement("select * from film limit 10");
+		PreparedStatement ps = conn
+				.prepareStatement("select * from film left outer join language on film.language_id = language.language_id");
 		return ps.executeQuery();
 	}
 }

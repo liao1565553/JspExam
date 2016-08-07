@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,7 +31,10 @@ public class ShowFilmServlet extends HttpServlet{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		req.getSession().setAttribute("filmList", lists);
+		req.getSession().setAttribute("lists", lists);
 		System.out.println("========电影列表加入session=========");
+		RequestDispatcher rd =  req.getRequestDispatcher("mainFilm.jsp");
+		rd.forward(req, resp);
+		
 	}
 }

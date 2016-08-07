@@ -1,3 +1,5 @@
+<%@page import="java.util.Set"%>
+<%@page import="java.util.Map"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" pageEncoding="UTF-8"%>
 
@@ -5,16 +7,40 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html  charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/mainFilm.css">
 <title>电影</title>
 </head>
 
 <body>
 	<h1>电影</h1>
 	<%
-	List<?> lists=(List<?>)session.getAttribute("lists");
+		List<Map> lists = (List<Map>) session.getAttribute("lists");
 	%>
-	
-	
-	
+	<div>
+		<table width=100% height="100" border="2" cellpadding="0" cellspacing="0" class="tb">
+			
+			<tr>
+				<td>film_id</td>
+				<td>title</td>
+				<td>description</td>
+				<td>language</td>
+			</tr>
+			
+			<%
+				for (int i = 0; i < lists.size(); i++) {
+			%>
+			<tr>
+				<td><%=lists.get(i).get("film_id")%></td>
+				<td><%=lists.get(i).get("title")%></td>
+				<td><%=lists.get(i).get("description")%></td>
+				<td><%=lists.get(i).get("name")%></td>
+			</tr>
+			<%
+				}
+			%>
+		</table>
+	</div>
+
+
 </body>
 </html>

@@ -1,0 +1,15 @@
+tb {
+	border-width: 2px;
+	border-collapse: collapse;
+	border-color: grey;
+	border-style: solid;
+	width: 200px;
+}
+
+td {
+	border-width: 2px;
+	border-collapse: collapse;
+	border-color: grey;
+	border-style: solid;
+	width: 200px;
+}

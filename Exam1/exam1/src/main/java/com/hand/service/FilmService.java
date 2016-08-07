@@ -30,12 +30,15 @@ public class FilmService {
 		}
 
 	}
-	
+
 	@SuppressWarnings("rawtypes")
-	public static List<Map> getFilmList() throws SQLException{
+	public static List<Map> getFilmList() throws SQLException {
 		FilmDao filmDao = new FilmDaoImpl();
+
 		ResultSet rs = filmDao.getAllFilm();
-		return SqlUtil.resultSetToList(rs);
+		List<Map> lists = SqlUtil.resultSetToList(rs);
+
+		return lists;
 	}
 
 }
