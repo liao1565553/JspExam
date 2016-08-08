@@ -9,6 +9,16 @@
 <meta http-equiv="Content-Type" content="text/html  charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/mainFilm.css">
 <title>电影</title>
+<script type="text/javascript">
+	function delect(id){
+		if(window.confirm("确定要删除它吗？")){
+			location.href="<%=request.getContextPath()%>/DelFilmServlet?film_id="+id;
+		}
+	}
+
+</script>
+
+
 </head>
 
 <body>
@@ -28,6 +38,7 @@
 				<td>title</td>
 				<td>description</td>
 				<td>language</td>
+				<td>删除</td>
 			</tr>
 
 			<%
@@ -38,6 +49,9 @@
 				<td><%=lists.get(i).get("title")%></td>
 				<td><%=lists.get(i).get("description")%></td>
 				<td><%=lists.get(i).get("name")%></td>
+				<td>
+					<button id="delbtn" onclick="delect(<%=lists.get(i).get("film_id")%>)">删除</button>
+				</td>
 			</tr>
 			<%
 				}

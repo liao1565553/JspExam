@@ -48,7 +48,16 @@
 		<servlet-name>GetLanguageServlet</servlet-name>
 		<servlet-class>com.hand.servlet.GetLanguageServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>DelFilmServlet</servlet-name>
+		<servlet-class>com.hand.servlet.DelFilmServlet</servlet-class>
+	</servlet>
 
+
+	<servlet-mapping>
+		<servlet-name>DelFilmServlet</servlet-name>
+		<url-pattern>/DelFilmServlet</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>GetLanguageServlet</servlet-name>

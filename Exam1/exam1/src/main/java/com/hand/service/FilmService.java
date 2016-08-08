@@ -31,13 +31,21 @@ public class FilmService {
 
 	}
 
-	public static List<Map<?,?>> getFilmList() throws SQLException {
+	public static List<Map<?, ?>> getFilmList() throws SQLException {
 		FilmDao filmDao = new FilmDaoImpl();
 
 		ResultSet rs = filmDao.getAllFilm();
-		List<Map<?,?>> lists = SqlUtil.resultSetToList(rs);
-
+		List<Map<?, ?>> lists = SqlUtil.resultSetToList(rs);
+		
 		return lists;
+	}
+
+	public static boolean delFilmById(short id) throws SQLException {
+		FilmDao filmDao = new FilmDaoImpl();
+		if (filmDao.delFilmById(id)) {
+			return true;
+		}
+		return false;
 	}
 
 }

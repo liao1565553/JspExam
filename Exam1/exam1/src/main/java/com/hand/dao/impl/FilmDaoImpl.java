@@ -13,4 +13,16 @@ public class FilmDaoImpl extends Connections implements FilmDao {
 				.prepareStatement("select * from film left outer join language on film.language_id = language.language_id");
 		return ps.executeQuery();
 	}
+
+	public boolean delFilmById(Short id) throws SQLException {
+		PreparedStatement ps = null;
+		ps = conn.prepareStatement("SET FOREIGN_KEY_CHECKS = 0");
+		ps.execute();
+		ps = conn.prepareStatement("delete from film where film_id=" + id);
+		ps.execute();
+		if (ps.getUpdateCount() > 0) {
+			return true;
+		}
+		return false;
+	}
 }

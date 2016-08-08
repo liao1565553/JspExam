@@ -30,7 +30,7 @@ public class GetLanguageServlet extends HttpServlet{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		 req.getSession().setAttribute("languageList", languageList);
+		req.getSession().setAttribute("languageList", languageList);
 		RequestDispatcher rd =  req.getRequestDispatcher("addFilm.jsp");
 		rd.forward(req, resp);
 	}
