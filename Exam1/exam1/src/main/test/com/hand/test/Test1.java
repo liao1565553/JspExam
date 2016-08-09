@@ -2,12 +2,12 @@ package com.hand.test;
 
 import java.sql.SQLException;
 
-import com.hand.service.FilmService;
+import com.hand.service.LanguageService;
 
 public class Test1 {
 	public static void main(String[] args) {
 		try {
-			FilmService.getFilmList();
+			System.out.println(LanguageService.getIdByName("Italian"));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

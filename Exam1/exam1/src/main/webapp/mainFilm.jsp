@@ -11,7 +11,7 @@
 <title>电影</title>
 <script type="text/javascript">
 	function delect(id){
-		if(window.confirm("确定要删除它吗？")){
+		if(window.confirm("确定要删除"+id+"吗？")){
 			location.href="<%=request.getContextPath()%>/DelFilmServlet?film_id="+id;
 		}
 	}

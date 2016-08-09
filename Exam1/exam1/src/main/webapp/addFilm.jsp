@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html  charset=utf-8">
 <title>新增电影</title>
 <link rel="stylesheet" type="text/css" href="css/addFilm.css">
+
 </head>
 
 <body>
@@ -19,7 +20,7 @@
 	%>
 
 	<div class="addFilmForm">
-		<form action="">
+		<form action="<%=request.getContextPath() %>/AddFilmServlet" method="post">
 			<a>title</a>
 			<input type="text" name="title">
 			<a>description</a>
@@ -34,8 +35,8 @@
 					}
 				%>
 			</select>
-			<br>
-			<button class="addButton">添加</button>
+			
+			<input class="addButton" type="submit" value="添加">
 		</form>
 	</div>
 

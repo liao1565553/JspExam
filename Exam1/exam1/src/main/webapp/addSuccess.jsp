@@ -4,12 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html  charset=utf-8">
-<title>操作失败</title>
+<title>添加成功</title>
 
 </head>
 
 <body>
-	<h1>操作失败</h1>
+	<h1>添加成功</h1>
+	
+	<a href="addFilm.jsp">继续添加</a><br>
 	<a href="<%=request.getContextPath()%>/showFilmServlet">返回</a>
 </body>
 </html>

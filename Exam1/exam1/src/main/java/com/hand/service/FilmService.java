@@ -6,15 +6,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.hand.bean.Film;
 import com.hand.dao.FilmDao;
 import com.hand.dao.impl.FilmDaoImpl;
 import com.hand.utils.SqlUtil;
 
 public class FilmService {
-
+	static FilmDao filmDao = new FilmDaoImpl();
 	public static void showFilm() {
 
-		FilmDao filmDao = new FilmDaoImpl();
 		try {
 			ResultSet rs = filmDao.getAllFilm();
 
@@ -46,6 +46,10 @@ public class FilmService {
 			return true;
 		}
 		return false;
+	}
+	
+	public static boolean addFilm(Film film) throws SQLException{
+		return filmDao.addFilm(film);
 	}
 
 }

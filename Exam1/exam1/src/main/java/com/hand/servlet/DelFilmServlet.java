@@ -28,14 +28,11 @@ public class DelFilmServlet extends HttpServlet {
 			if (FilmService.delFilmById(filmId)) {
 				// req.getSession().setAttribute("is_del", "del_success");
 				System.out.println("删除成功！删除id=" + req.getParameter("film_id"));
-//				List<Map<?, ?>> newlists = (List<Map<?, ?>>) req.getSession().getAttribute("lists");
-//				newlists.remove(filmId);
-//				req.setAttribute("lists", newlists);
 				List<Map<?, ?>> lists=FilmService.getFilmList();
 				req.getSession().setAttribute("lists", lists);
-				
-				RequestDispatcher rd = req.getRequestDispatcher("mainFilm.jsp");
-				rd.forward(req, resp);
+				resp.sendRedirect(req.getContextPath() + "/mainFilm.jsp");
+//				RequestDispatcher rd = req.getRequestDispatcher("mainFilm.jsp");
+//				rd.forward(req, resp);
 			} else {
 				System.out.println("删除失败！删除id=" + req.getParameter("film_id"));
 				RequestDispatcher rd = req.getRequestDispatcher("error.jsp");

@@ -10,9 +10,14 @@ import com.hand.dao.impl.LanguageDaoImpl;
 import com.hand.utils.SqlUtil;
 
 public class LanguageService {
+	static LanguageDao languageDao = new LanguageDaoImpl();
 	public static List<Map<?, ?>> getLanguageList() throws SQLException {
-		LanguageDao languageDao = new LanguageDaoImpl();
+		
 		ResultSet rs = languageDao.SelectAll();
 		return SqlUtil.resultSetToList(rs);
+	}
+
+	public static byte getIdByName(String name) throws SQLException{
+		return languageDao.getIdByName(name);
 	}
 }

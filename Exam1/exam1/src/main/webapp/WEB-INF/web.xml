@@ -52,7 +52,16 @@
 		<servlet-name>DelFilmServlet</servlet-name>
 		<servlet-class>com.hand.servlet.DelFilmServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>AddFilmServlet</servlet-name>
+		<servlet-class>com.hand.servlet.AddFilmServlet</servlet-class>
+	</servlet>
 
+
+	<servlet-mapping>
+		<servlet-name>AddFilmServlet</servlet-name>
+		<url-pattern>/AddFilmServlet</url-pattern>
+	</servlet-mapping>
 
 	<servlet-mapping>
 		<servlet-name>DelFilmServlet</servlet-name>
